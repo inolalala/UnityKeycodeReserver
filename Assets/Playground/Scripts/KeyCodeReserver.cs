@@ -4,31 +4,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class KeyCodeReserver : MonoBehaviour {
-
-    [SerializeField] private List<KeyEvent> keys = new List<KeyEvent>();
-
-    [Serializable]
-    public class KeyEvent
+namespace KeyCodeReserve
+{
+    public class KeyCodeReserver : MonoBehaviour
     {
-        public KeyCode key;
-        public UnityEvent keyEvent;
-    }
 
-    public List<KeyEvent> GetUsingKeyCodes()
-    {
-        return keys;
-    }
+        [SerializeField] private List<ReservedKeyEvent> keyEvents = new List<ReservedKeyEvent>();
 
-    private void Update()
-    {
-        for (int i = 0; i < GetUsingKeyCodes().Count; i++)
+        private ReservedKeyEventRepository reservedKeyEventRepository;
+
+        void Awake()
         {
-            KeyEvent pressedKeyCode = GetUsingKeyCodes()[i];
-            if (Input.GetKeyDown(pressedKeyCode.key))
+            reservedKeyEventRepository = ReservedKeyEventRepository.Instance;
+            
+        }
+
+        /*
+        private void Update()
+        {
+            for (int i = 0; i < GetUsingKeyCodes().Count; i++)
             {
-                pressedKeyCode.keyEvent.Invoke();
+                ReservedKeyEvent pressedKeyCode = GetUsingKeyCodes()[i];
+                if (Input.GetKeyDown(pressedKeyCode.key))
+                {
+                    pressedKeyCode.keyEvent.Invoke();
+                }
             }
         }
+        */
+
     }
 }
