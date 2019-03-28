@@ -7,9 +7,6 @@ namespace KeyCodeReserve
 {
     public class ReservedKeyEventRepository
     {
-        private static ReservedKeyEventRepository _instance;
-        public List<ReservedKeyEvent> keyEvents = new List<ReservedKeyEvent>();
-
         public static ReservedKeyEventRepository Instance
         {
             get
@@ -22,6 +19,10 @@ namespace KeyCodeReserve
             }
         }
 
+        private static ReservedKeyEventRepository _instance;
+        private List<ReservedKeyEvent> keyEvents = new List<ReservedKeyEvent>();
+
+        
         public List<ReservedKeyEvent> GetAllKeyEvents()
         {
             return Instance.keyEvents;

@@ -16,7 +16,7 @@ namespace KeyCodeReserve
         void Awake()
         {
             reservedKeyEventRepository = ReservedKeyEventRepository.Instance;
-            
+            reservedKeyEventRepository.Add(keyEvents);
         }
 
         /*
