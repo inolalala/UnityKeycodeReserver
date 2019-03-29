@@ -19,19 +19,5 @@ namespace KeyCodeReserve
             reservedKeyEventRepository.Add(keyEvents);
         }
 
-        /*
-        private void Update()
-        {
-            for (int i = 0; i < GetUsingKeyCodes().Count; i++)
-            {
-                ReservedKeyEvent pressedKeyCode = GetUsingKeyCodes()[i];
-                if (Input.GetKeyDown(pressedKeyCode.key))
-                {
-                    pressedKeyCode.keyEvent.Invoke();
-                }
-            }
-        }
-        */
-
     }
 }

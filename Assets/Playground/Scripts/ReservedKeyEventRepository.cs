@@ -22,7 +22,19 @@ namespace KeyCodeReserve
         private static ReservedKeyEventRepository _instance;
         private List<ReservedKeyEvent> keyEvents = new List<ReservedKeyEvent>();
 
-        
+        public void WatchKeyInputOnUpdate()
+        {
+
+            for(int i=0; i<Instance.GetAllKeyEvents().Count; i++)
+            {
+                if (Input.GetKeyDown(Instance.GetAllKeyEvents()[i].key))
+                {
+                    Instance.GetAllKeyEvents()[i].InvokeKeyEvent();
+                }
+            }
+        }
+
+
         public List<ReservedKeyEvent> GetAllKeyEvents()
         {
             return Instance.keyEvents;
