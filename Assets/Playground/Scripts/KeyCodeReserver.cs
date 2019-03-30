@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,14 +10,23 @@ namespace KeyCodeReserve
     public class KeyCodeReserver : MonoBehaviour
     {
 
-        [SerializeField] private List<ReservedKeyEvent> keyEvents = new List<ReservedKeyEvent>();
+        [SerializeField] 
+        private List<ReservedKeyEvent> ReserveKeyEvents = new List<ReservedKeyEvent>();
+
+
 
         private ReservedKeyEventRepository reservedKeyEventRepository;
 
         void Awake()
         {
             reservedKeyEventRepository = ReservedKeyEventRepository.Instance;
-            reservedKeyEventRepository.Add(keyEvents);
+            reservedKeyEventRepository.Add(ReserveKeyEvents);
+        }
+
+
+        public void UpdateCurrentKeyEventsList()
+        {
+
         }
 
     }
