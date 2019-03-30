@@ -13,8 +13,6 @@ namespace KeyCodeReserve
         [SerializeField] 
         private List<ReservedKeyEvent> ReserveKeyEvents = new List<ReservedKeyEvent>();
 
-
-
         private ReservedKeyEventRepository reservedKeyEventRepository;
 
         void Awake()
