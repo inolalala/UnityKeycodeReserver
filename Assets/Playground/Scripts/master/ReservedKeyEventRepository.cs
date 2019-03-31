@@ -7,6 +7,10 @@ namespace KeyCodeReserve
 {
     public class ReservedKeyEventRepository
     {
+
+        private static ReservedKeyEventRepository _instance;
+        public List<ReservedKeyEvent> KeyEvents = new List<ReservedKeyEvent>();
+
         public static ReservedKeyEventRepository Instance
         {
             get
@@ -19,47 +23,38 @@ namespace KeyCodeReserve
             }
         }
 
-        private static ReservedKeyEventRepository _instance;
-        private List<ReservedKeyEvent> keyEvents = new List<ReservedKeyEvent>();
+
 
         public void WatchKeyInputOnUpdate()
         {
 
-            for(int i=0; i<Instance.GetAllKeyEvents().Count; i++)
+            for(int i=0; i<Instance.FetchAllKeyEvents().Count; i++)
             {
-                if (Input.GetKeyDown(Instance.GetAllKeyEvents()[i].key))
+                if (Input.GetKeyDown(Instance.FetchAllKeyEvents()[i].key))
                 {
-                    Instance.GetAllKeyEvents()[i].InvokeKeyEvent();
+                    Instance.FetchAllKeyEvents()[i].InvokeKeyEvent();
                 }
             }
         }
 
 
-        public List<ReservedKeyEvent> GetAllKeyEvents()
+        public List<ReservedKeyEvent> FetchAllKeyEvents()
         {
-            return Instance.keyEvents;
+            return Instance.KeyEvents;
         }
-        public ReservedKeyEvent GetByIndex(int index)
-        {
-            return Instance.keyEvents[index];
-        }
-        public List<ReservedKeyEvent> GetByKeyCode(KeyCode keyCode)
+
+        public List<ReservedKeyEvent> FetchByKeyCode(KeyCode keyCode)
         {
             List<ReservedKeyEvent> returnKeyEventList = new List<ReservedKeyEvent>();
-            foreach (var keyEvent in Instance.keyEvents)
+            foreach (var keyEvent in Instance.KeyEvents)
             {
                 if (keyEvent.key == keyCode)
                 {
                     returnKeyEventList.Add(keyEvent);
                 }
             }
-         
+
             return returnKeyEventList;
         }
-        public void Add(List<ReservedKeyEvent> keyEvents)
-        {
-            Instance.keyEvents.AddRange(keyEvents);
-        }
-
     }
 }

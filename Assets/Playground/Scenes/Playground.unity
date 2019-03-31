@@ -299,11 +299,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1638373997}
-  - component: {fileID: 1638373996}
   - component: {fileID: 1638373998}
+  - component: {fileID: 1638374000}
   - component: {fileID: 1638373999}
+  - component: {fileID: 1638373996}
   m_Layer: 0
-  m_Name: KeyEventInvoker
+  m_Name: KeyEventManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -317,42 +318,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1638373995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93dda38f21f821d4283eaaaab5750833, type: 3}
+  m_Script: {fileID: 11500000, guid: c2f4a7490f8e54f7b9d1cd3046191f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReserveKeyEvents:
-  - key: 12
+  AllReservedKeyEvents:
+  - key: 8
     keyEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 549062072}
-          m_MethodName: Method01
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  - key: 44
+  - key: 8
     keyEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 549062072}
-          m_MethodName: Method02
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
 --- !u!4 &1638373997
@@ -387,7 +366,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1638373995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be6b8abfd5dd2492486ee0af69546210, type: 3}
+  m_Script: {fileID: 11500000, guid: 610a755e6b1164a5c839c15ff5964f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllReservedKeyEvents: []
+  TargetKeycode: 8
+--- !u!114 &1638374000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1638373995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd2ccc0b0bb64604b869a0eac696d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetKeyEvents:
+  - key: 8
+    keyEvent:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
