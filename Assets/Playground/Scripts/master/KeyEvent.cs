@@ -6,7 +6,7 @@ using UnityEngine.Events;
 namespace KeyCodeReserve
 {
     [System.Serializable]
-    public class ReservedKeyEvent
+    public struct ReservedKeyEvent
     {
         public KeyCode key;
         public UnityEvent keyEvent;
