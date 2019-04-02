@@ -23,6 +23,7 @@ namespace KeyCodeReserve
         {
             Debug.Log("Reserve is called");
             ReservedKeyEventRepository.Instance.KeyEvents.Add(TargetKeyEvent);
+            TargetKeyEvent = new ReservedKeyEvent();
         }
     }
 

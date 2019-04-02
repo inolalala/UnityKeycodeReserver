@@ -322,16 +322,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AllReservedKeyEvents:
-  - key: 8
+  - key: 99
     keyEvent:
       m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  - key: 8
-    keyEvent:
-      m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 549062072}
+          m_MethodName: Method01
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
 --- !u!4 &1638373997
@@ -369,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a755e6b1164a5c839c15ff5964f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetKeycode: 8
+  TargetKeycode: 97
 --- !u!114 &1638374000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,10 +386,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd2ccc0b0bb64604b869a0eac696d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetKeyEvents:
-  - key: 8
+  TargetKeyEvent:
+    key: 98
     keyEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 549062072}
+          m_MethodName: Method01
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
