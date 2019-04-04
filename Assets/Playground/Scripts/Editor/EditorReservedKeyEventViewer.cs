@@ -14,10 +14,17 @@ namespace KeyCodeReserve
 
             ReservedKeyEventViewer reservedKeyEventViewer = target as ReservedKeyEventViewer;
 
+            GUI.color = ConverHexColor("#b3b3b3");
             if (GUILayout.Button("Update List"))
             {
                 reservedKeyEventViewer.UpdateList();
             }
+        }
+        private Color ConverHexColor(string convertTarget)
+        {
+            Color resultColor = new Color();
+            ColorUtility.TryParseHtmlString(convertTarget, out resultColor);
+            return resultColor;
         }
     }
 }

@@ -13,22 +13,35 @@ namespace KeyCodeReserve
             base.OnInspectorGUI();
 
             KeyEventRefresher keyEventRefresher = target as KeyEventRefresher;
-
-            if(GUILayout.Button("Refresh by KeyCode"))
+            EditorGUILayout.BeginHorizontal();
             {
-                keyEventRefresher.RefreshByKeyCode();
-            }
-            if (GUILayout.Button("Refresh by Index"))
-            {
-                keyEventRefresher.RefreshByIndex();
-            }
+                GUI.color = ConverHexColor("#ffdddd");
+                if (GUILayout.Button("Refresh by KeyCode"))
+                {
+                    keyEventRefresher.RefreshByKeyCode();
+                }
 
+                GUI.color = ConverHexColor("#ffdddd");
+                if (GUILayout.Button("Refresh by Index"))
+                {
+                    keyEventRefresher.RefreshByIndex();
+                }
+            }
+            EditorGUILayout.EndHorizontal();
+            
+            GUI.color = ConverHexColor("#ff6d6d");
             if (GUILayout.Button("Refresh All"))
             {
                 keyEventRefresher.RefreshAll();
             }
             
 
+        }
+        private Color ConverHexColor(string convertTarget)
+        {
+            Color resultColor = new Color();
+            ColorUtility.TryParseHtmlString(convertTarget, out resultColor);
+            return resultColor;
         }
     }
 }
