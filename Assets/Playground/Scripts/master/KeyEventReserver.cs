@@ -9,7 +9,7 @@ namespace KeyCodeReserve
     {
 
         [SerializeField]
-        private ReservedKeyEvent TargetKeyEvent = new ReservedKeyEvent();
+        private ReservedKeyEvent ReserveTarget = new ReservedKeyEvent();
 
         private ReservedKeyEventRepository reservedKeyEventRepository;
 
@@ -22,8 +22,8 @@ namespace KeyCodeReserve
         public void Reserve()
         {
             Debug.Log("Reserve is called");
-            ReservedKeyEventRepository.Instance.KeyEvents.Add(TargetKeyEvent);
-            TargetKeyEvent = new ReservedKeyEvent();
+            ReservedKeyEventRepository.Instance.KeyEvents.Add(ReserveTarget);
+            ReserveTarget = new ReservedKeyEvent();
         }
     }
 

@@ -18,11 +18,16 @@ namespace KeyCodeReserve
             {
                 keyEventRefresher.RefreshByKeyCode();
             }
+            if (GUILayout.Button("Refresh by Index"))
+            {
+                keyEventRefresher.RefreshByIndex();
+            }
 
             if (GUILayout.Button("Refresh All"))
             {
                 keyEventRefresher.RefreshAll();
             }
+            
 
         }
     }

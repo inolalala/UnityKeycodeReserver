@@ -8,13 +8,11 @@ namespace KeyCodeReserve
     {
         [SerializeField]
         private KeyCode TargetKeycode;
+        [SerializeField]
+        private int TargetIndex;
 
         private ReservedKeyEventRepository reservedKeyEventRepository;
 
-        void Awake()
-        {
-            reservedKeyEventRepository = ReservedKeyEventRepository.Instance;
-        }
 
         public void RefreshAll()
         {
@@ -22,9 +20,23 @@ namespace KeyCodeReserve
         }
         public void RefreshByKeyCode()
         {
+            reservedKeyEventRepository = ReservedKeyEventRepository.Instance;
             reservedKeyEventRepository.KeyEvents.RemoveAll(
                 t => t.key == TargetKeycode
             );
+        }
+        public void RefreshByIndex()
+        {
+            try
+            {
+                reservedKeyEventRepository = ReservedKeyEventRepository.Instance;
+                reservedKeyEventRepository.KeyEvents.RemoveAt(TargetIndex);
+                
+            }
+            catch(System.NullReferenceException e)
+            {
+                Debug.Log(e.ToString());
+            }
         }
     }
 }
