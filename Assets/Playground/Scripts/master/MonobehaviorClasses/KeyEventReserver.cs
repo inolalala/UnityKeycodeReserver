@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace KeyCodeReserve
 {
@@ -23,6 +21,7 @@ namespace KeyCodeReserve
         {
             Debug.Log("Reserve is called");
             ReservedKeyEventRepository.Instance.KeyEvents.Add(ReserveTarget);
+
             ReserveTarget = new ReservedKeyEvent();
         }
     }
