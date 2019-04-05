@@ -4,8 +4,9 @@ using UnityEngine;
 
 namespace KeyCodeReserve
 {
-    public class KeyEventConfigHandler : MonoBehaviour
+    public class KeyEventConfigurator : MonoBehaviour
     {
+
 
 
     }
