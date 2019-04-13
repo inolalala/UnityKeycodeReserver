@@ -3,20 +3,19 @@
 namespace KeyCodeReserve
 {
     [ExecuteInEditMode]
-    public class KeyEventConfigurator : ILoadable, IConservable
+    public class KeyEventConfigurator : MonoBehaviour
     {
-        private ReservedKeyEventRepository repository;
 
-        public void Load()
-        {
-            repository = ReservedKeyEventRepository.Instance;
+        [SerializeField] private string configPath;
+        [SerializeField] private string configName;
 
-        }
-        public void Save()
+
+        public void CreateConfig()
         {
-            repository = ReservedKeyEventRepository.Instance;
-            
-            // PlayerPrefs.SetString();
+            ConfigCreator configCreator = new ConfigCreator(configPath, configName);
         }
+
+        [SerializeField] private ConfigReserver configReserver;
+        
     }
 }

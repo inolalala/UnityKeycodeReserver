@@ -9,7 +9,7 @@ namespace KeyCodeReserve
     {
 
         private static ReservedKeyEventRepository _instance;
-        public List<ReservedKeyEvent> KeyEvents = new List<ReservedKeyEvent>();
+        private List<ReservedKeyEvent> _keyEvents = new List<ReservedKeyEvent>();
 
         public static ReservedKeyEventRepository Instance
         {
@@ -22,6 +22,8 @@ namespace KeyCodeReserve
                 return _instance;
             }
         }
+
+        
 
 
 
@@ -40,13 +42,14 @@ namespace KeyCodeReserve
 
         public List<ReservedKeyEvent> FetchAllKeyEvents()
         {
-            return Instance.KeyEvents;
+
+            return _keyEvents;
         }
 
         public List<ReservedKeyEvent> FetchByKeyCode(KeyCode keyCode)
         {
             List<ReservedKeyEvent> returnKeyEventList = new List<ReservedKeyEvent>();
-            foreach (var keyEvent in Instance.KeyEvents)
+            foreach (var keyEvent in _keyEvents)
             {
                 if (keyEvent.key == keyCode)
                 {

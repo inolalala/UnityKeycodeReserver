@@ -14,21 +14,24 @@ namespace KeyCodeReserve
 
         public void RefreshAll()
         {
-            ReservedKeyEventRepository.Instance.KeyEvents.Clear();
+            //ReservedKeyEventRepository.Instance.KeyEvents.Clear();
         }
         public void RefreshByKeyCode()
         {
-            reservedKeyEventRepository = ReservedKeyEventRepository.Instance;
-            reservedKeyEventRepository.KeyEvents.RemoveAll(
-                t => t.key == TargetKeycode
-            );
+            
+            //reservedKeyEventRepository = ReservedKeyEventRepository.Instance;
+            //reservedKeyEventRepository.KeyEvents.RemoveAll(
+            //    t => t.key == TargetKeycode
+            //);
+             
+
         }
         public void RefreshByIndex()
         {
             try
             {
-                reservedKeyEventRepository = ReservedKeyEventRepository.Instance;
-                reservedKeyEventRepository.KeyEvents.RemoveAt(TargetIndex);
+                //reservedKeyEventRepository = ReservedKeyEventRepository.Instance;
+                //reservedKeyEventRepository.KeyEvents.RemoveAt(TargetIndex);
                 
             }
             catch(System.NullReferenceException e)
